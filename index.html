@@ -12,7 +12,7 @@
 
         gtag('config', 'AW-17878814718');
     </script>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotización de Seguro de Auto - Eastar</title>
@@ -497,7 +497,7 @@
 
                     <!-- VIN Field -->
                     <div class="form-group">
-                        <label for="vin">Número de VIN del Vehículo <span class="required">*</span></label>
+                        <label for="vin">Número de VIN del Vehículo</label>
                         <div class="input-with-icon">
                             <i class="fas fa-car"></i>
                             <input type="text" id="vin" name="vin" placeholder="Ej: 1HGCM82633A123456" required>
@@ -667,13 +667,12 @@
             }, 5000);
         });
 
-        // Validación básica del VIN (17 caracteres alfanuméricos)
         document.getElementById('vin').addEventListener('blur', function () {
             const vin = this.value.trim();
-            // Verificar si tiene 17 caracteres (formato estándar de VIN)
+            // Solo validar si el usuario ingresó algo (pero no es obligatorio)
             if (vin.length > 0 && vin.length !== 17) {
                 this.style.borderColor = 'var(--accent)';
-                this.setCustomValidity('El número VIN debe tener 17 caracteres');
+                this.setCustomValidity('El número VIN debe tener 17 caracteres si lo ingresas');
             } else {
                 this.style.borderColor = '#e0e0e0';
                 this.setCustomValidity('');
