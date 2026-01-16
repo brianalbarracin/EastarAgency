@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización de Seguro de Auto - Eastar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --gray: #95a5a6;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .header-info {
+            text-align: right;
+        }
+
+        .header-info p {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+
+        .header-info .phone {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(52, 152, 219, 0.8)), url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        /* Form Section */
+        .form-section {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .form-header {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .form-header h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: var(--gray);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .input-with-icon {
+            position: relative;
+        }
+
+        .input-with-icon i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 12px 12px 45px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--secondary);
+            outline: none;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #c0392b;
+        }
+
+        .required {
+            color: var(--accent);
+        }
+
+        /* Info Section */
+        .info-section {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .benefits {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .benefits h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .benefit-icon {
+            background-color: #e8f4fc;
+            color: var(--secondary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .benefit-content p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* Insurance Partners */
+        .partners {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .partners h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+        }
+
+        .partner-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .partner-logo {
+            flex: 1;
+            min-width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .partner-logo img {
+            max-width: 150px;
+            max-height: 70px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+
+        .partner-logo img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* Success Message */
+        #success-message {
+            display: none;
+            background-color: var(--success);
+            color: white;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .footer-column p, .footer-column a {
+            color: #bdc3c7;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-info {
+                text-align: center;
+                margin-top: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://ec0220f4e0.imgdist.com/pub/bfra/rnm4vuhe/um3/rc2/dgu/Logo_Eastar-transformed-transformed_1.png" alt="Eastar Insurance Logo">
+            </div>
+            <div class="header-info">
+                <p>Cotiza tu seguro de auto en minutos</p>
+                <p class="phone"><i class="fas fa-phone"></i> 1-800-555-1234</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Cotiza tu Seguro de Auto Ahora</h1>
+            <p>Completa el formulario y recibe las mejores cotizaciones de las aseguradoras más confiables del mercado. ¡Es rápido, fácil y sin compromiso!</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container main-content">
+        <!-- Form Section -->
+        <section class="form-section">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Solicita tu Cotización</h2>
+                    <p>Completa los siguientes datos para recibir tu cotización personalizada</p>
+                </div>
+
+                <form id="quote-form" action="https://submit-form.com/wrgGlnsI6" method="POST">
+                    <!-- Zapier Key Field -->
+                    <input type="hidden" name="zapier_key" value="form_v1_Ukablcx7WDeFAFei9aOn8aR5">
+                    
+                    <!-- Email Field -->
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico <span class="required">*</span></label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                        </div>
+                    </div>
+
+                    <!-- Name Field -->
+                    <div class="form-group">
+                        <label for="name">Nombre Completo <span class="required">*</span></label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="name" name="name" placeholder="Tu nombre completo" required>
+                        </div>
+                    </div>
+
+                    <!-- Phone Field -->
+                    <div class="form-group">
+                        <label for="phone">Número de Teléfono <span class="required">*</span></label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" required>
+                        </div>
+                    </div>
+
+                    <!-- Address Field -->
+                    <div class="form-group">
+                        <label for="address">Dirección <span class="required">*</span></label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-home"></i>
+                            <input type="text" id="address" name="address" placeholder="Tu dirección completa" required>
+                        </div>
+                    </div>
+
+                    <!-- VIN Field -->
+                    <div class="form-group">
+                        <label for="vin">Número de VIN del Vehículo <span class="required">*</span></label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-car"></i>
+                            <input type="text" id="vin" name="vin" placeholder="Ej: 1HGCM82633A123456" required>
+                        </div>
+                        <small style="color: var(--gray); display: block; margin-top: 5px;">El VIN es un número de 17 dígitos que puedes encontrar en tu documentación del vehículo o en el lado del conductor del tablero.</small>
+                    </div>
+
+                    <!-- Additional Notes -->
+                    <div class="form-group">
+                        <label for="notes">Información Adicional (Opcional)</label>
+                        <textarea id="notes" name="notes" placeholder="Información adicional sobre tu vehículo o necesidades específicas de cobertura..."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i> Solicitar Cotización
+                    </button>
+
+                    <!-- Success Message -->
+                    <div id="success-message">
+                        <h3><i class="fas fa-check-circle"></i> ¡Gracias por tu solicitud!</h3>
+                        <p>Hemos recibido tu información y te contactaremos en breve con tu cotización personalizada.</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section class="info-section">
+            <div class="benefits">
+                <h3>Beneficios de Cotizar con Nosotros</h3>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Respuesta Rápida</h4>
+                        <p>Recibe cotizaciones de las mejores aseguradoras en menos de 24 horas.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Protección Completa</h4>
+                        <p>Ofrecemos coberturas que se adaptan a tus necesidades específicas.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Asesoría Personalizada</h4>
+                        <p>Nuestros expertos te ayudarán a elegir la mejor opción para ti.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Los Mejores Precios</h4>
+                        <p>Compara precios entre múltiples aseguradoras para encontrar la mejor tarifa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="partners">
+                <h3>Nuestros Aliados Aseguradores</h3>
+                <div class="partner-logos">
+                    <div class="partner-logo">
+                        <img src="https://ec0220f4e0.imgdist.com/pub/bfra/rnm4vuhe/6w9/ycy/s70/40.png" alt="Bristol Insurance">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://ec0220f4e0.imgdist.com/pub/bfra/rnm4vuhe/oha/lkm/v90/41.png" alt="Falcon Insurance">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://ec0220f4e0.imgdist.com/public/users/Integrators/BeeProAgency/1073507_1058780/Progressive.png" alt="Progressive Insurance">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Eastar Insurance</h4>
+                    <p>Somos tu aliado confiable para encontrar la mejor cobertura de seguro de auto al mejor precio del mercado.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Calle Principal, Ciudad</p>
+                    <p><i class="fas fa-phone"></i> 1-800-555-1234</p>
+                    <p><i class="fas fa-envelope"></i> info@eastarinsurance.com</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Horario de Atención</h4>
+                    <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                    <p>Sábados: 9:00 AM - 1:00 PM</p>
+                    <p>Domingos: Cerrado</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 Eastar Insurance. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Manejar el envío del formulario
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Mostrar mensaje de éxito
+            document.getElementById('success-message').style.display = 'block';
+            
+            // Desplazarse al mensaje de éxito
+            document.getElementById('success-message').scrollIntoView({ behavior: 'smooth' });
+            
+            // Enviar el formulario después de un breve retraso para mostrar la animación
+            setTimeout(() => {
+                this.submit();
+            }, 2000);
+            
+            // Opcional: Reiniciar el formulario después del envío
+            setTimeout(() => {
+                this.reset();
+                document.getElementById('success-message').style.display = 'none';
+            }, 5000);
+        });
+
+        // Validación básica del VIN (17 caracteres alfanuméricos)
+        document.getElementById('vin').addEventListener('blur', function() {
+            const vin = this.value.trim();
+            // Verificar si tiene 17 caracteres (formato estándar de VIN)
+            if (vin.length > 0 && vin.length !== 17) {
+                this.style.borderColor = 'var(--accent)';
+                this.setCustomValidity('El número VIN debe tener 17 caracteres');
+            } else {
+                this.style.borderColor = '#e0e0e0';
+                this.setCustomValidity('');
+            }
+        });
+    </script>
+</body>
+</html>
