@@ -13,9 +13,7 @@
         gtag('config', 'AW-17878814718');
     </script>
 
-    <!-- Event snippet for Enviar formulario de clientes potenciales conversion page -->
-    <script> gtag('event', 'conversion', { 'send_to': 'AW-17878814718/2FUZCIm8mOYbEP6fpM1C', 'value': 1.0, 'currency': 'COP' }); </script>
-
+    
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -462,6 +460,7 @@
                 <form id="quote-form" action="https://submit-form.com/wrgGlnsI6" method="POST">
                     <!-- Zapier Key Field -->
                     <input type="hidden" name="zapier_key" value="form_v1_Ukablcx7WDeFAFei9aOn8aR5">
+                    <input type="hidden" name="_redirect" value="https://eastaragency.onrender.com/thank-you.html">
 
                     <!-- Email Field -->
                     <div class="form-group">
@@ -650,7 +649,7 @@
 
     <script>
         // Manejar el envío del formulario
-        document.getElementById('quote-form').addEventListener('submit', function (e) {
+        /*document.getElementById('quote-form').addEventListener('submit', function (e) {
             e.preventDefault();
 
             // Mostrar mensaje de éxito
@@ -669,7 +668,7 @@
                 this.reset();
                 document.getElementById('success-message').style.display = 'none';
             }, 5000);
-        });
+        });*/
 
         document.getElementById('vin').addEventListener('blur', function () {
             const vin = this.value.trim();
