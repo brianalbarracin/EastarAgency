@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://eastaragency.onrender.com/sitemap.xml
+
+# Contact
+# Website: https://eastaragency.onrender.com
+# Phone: +13412178592
