@@ -7,6 +7,36 @@
     <priority>1.0</priority>
   </url>
   
+  <!-- Páginas principales de seguros -->
+  <url>
+    <loc>https://eastaragency.onrender.com/car-insurance.html</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://eastaragency.onrender.com/home-insurance.html</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://eastaragency.onrender.com/business-insurance.html</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://eastaragency.onrender.com/commercial_auto.html</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Páginas adicionales -->
   <url>
     <loc>https://eastaragency.onrender.com/thank-you.html</loc>
     <lastmod>2024-01-20</lastmod>
