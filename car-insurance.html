@@ -48,7 +48,7 @@
     </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         * {
             margin: 0;
@@ -219,7 +219,9 @@
             color: var(--gray);
         }
 
-        input, select, textarea {
+        input,
+        select,
+        textarea {
             width: 100%;
             padding: 12px 12px 12px 45px;
             border: 2px solid #e0e0e0;
@@ -228,7 +230,9 @@
             transition: border-color 0.3s;
         }
 
-        input:focus, select:focus, textarea:focus {
+        input:focus,
+        select:focus,
+        textarea:focus {
             border-color: var(--car-blue);
             outline: none;
         }
@@ -691,7 +695,8 @@
     <section class="hero">
         <div class="container">
             <h1>Affordable Car Insurance Quotes in Texas</h1>
-            <p>Compare rates from top auto insurance companies and save up to $500/year on your policy. Get your personalized quote in minutes - no obligation, no hassle.</p>
+            <p>Compare rates from top auto insurance companies and save up to $500/year on your policy. Get your
+                personalized quote in minutes - no obligation, no hassle.</p>
             <div class="hero-subtitle">
                 Working with Bristol, Falcon, Progressive, Connect & Travelers to find you the best rate
             </div>
@@ -750,123 +755,49 @@
                         </div>
                     </div>
 
+                    
                     <!-- Driver Information -->
                     <div class="driver-section">
                         <h3>Driver Information</h3>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="driver_age">Driver's Age</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-birthday-cake"></i>
-                                    <input type="number" id="driver_age" name="driver_age" placeholder="Age" min="16" max="99">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="driving_experience">Years Driving Experience</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-car"></i>
-                                    <select id="driving_experience" name="driving_experience">
-                                        <option value="">Select Years</option>
-                                        <option value="less_than_1">Less than 1 year</option>
-                                        <option value="1_3">1-3 years</option>
-                                        <option value="3_5">3-5 years</option>
-                                        <option value="5_10">5-10 years</option>
-                                        <option value="10_plus">10+ years</option>
-                                    </select>
-                                </div>
+
+                        <div class="form-group">
+                            <label for="license_number">Driver's License Number <span class="required">*</span></label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-id-card"></i>
+                                <input type="text" id="license_number" name="license_number"
+                                    placeholder="Enter your driver's license number" required>
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
-                            <label for="accidents">Accidents in last 3 years</label>
+                            <label for="license_state">Driver's License State/Country</label>
                             <div class="input-with-icon">
-                                <i class="fas fa-exclamation-triangle"></i>
-                                <select id="accidents" name="accidents">
-                                    <option value="">Select</option>
-                                    <option value="0">0 accidents</option>
-                                    <option value="1">1 accident</option>
-                                    <option value="2">2 accidents</option>
-                                    <option value="3_plus">3 or more</option>
-                                </select>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <input type="text" id="license_state" name="license_state"
+                                    placeholder="Enter state (e.g., TX) or country if foreign">
                             </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="violations">Traffic violations (tickets)</label>
-                            <div class="input-with-icon">
-                                <i class="fas fa-traffic-light"></i>
-                                <select id="violations" name="violations">
-                                    <option value="">Select</option>
-                                    <option value="0">0 violations</option>
-                                    <option value="1">1 violation</option>
-                                    <option value="2">2 violations</option>
-                                    <option value="3_plus">3 or more</option>
-                                </select>
-                            </div>
+                            <small style="color: var(--gray); display: block; margin-top: 5px;">If your license is from
+                                another U.S. state, enter the state abbreviation. If foreign, enter your
+                                country.</small>
                         </div>
                     </div>
 
                     <!-- Vehicle Information -->
                     <div class="vehicle-section">
                         <h3>Vehicle Information</h3>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="vehicle_year">Vehicle Year <span class="required">*</span></label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-calendar"></i>
-                                    <input type="number" id="vehicle_year" name="vehicle_year" placeholder="2023" min="1990" max="2024" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="vehicle_make">Vehicle Make <span class="required">*</span></label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-car"></i>
-                                    <input type="text" id="vehicle_make" name="vehicle_make" placeholder="Toyota, Honda, Ford, etc." required>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="vehicle_model">Vehicle Model <span class="required">*</span></label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-car-side"></i>
-                                    <input type="text" id="vehicle_model" name="vehicle_model" placeholder="Camry, Civic, F-150, etc." required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="vehicle_type">Vehicle Type</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-truck-pickup"></i>
-                                    <select id="vehicle_type" name="vehicle_type">
-                                        <option value="">Select Type</option>
-                                        <option value="sedan">Sedan</option>
-                                        <option value="suv">SUV</option>
-                                        <option value="truck">Truck</option>
-                                        <option value="van">Van/Minivan</option>
-                                        <option value="coupe">Coupe</option>
-                                        <option value="convertible">Convertible</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        
+
                         <div class="form-group">
-                            <label for="vin">Vehicle VIN Number</label>
+                            <label for="vin">Vehicle VIN Number <span class="required">*</span></label>
                             <div class="input-with-icon">
                                 <i class="fas fa-barcode"></i>
-                                <input type="text" id="vin" name="vin" placeholder="Ex: 1HGCM82633A123456">
+                                <input type="text" id="vin" name="vin" placeholder="Ex: 1HGCM82633A123456" required>
                             </div>
-                            <small style="color: var(--gray); display: block; margin-top: 5px;">17-character number found on vehicle documents or driver's side dashboard</small>
+                            <small style="color: var(--gray); display: block; margin-top: 5px;">17-character Vehicle
+                                Identification Number found on vehicle documents or driver's side dashboard</small>
                         </div>
                     </div>
 
+                    
                     <!-- Coverage Needs -->
                     <div class="form-group">
                         <label for="coverage_type">Desired Coverage Type</label>
@@ -884,12 +815,14 @@
                     <!-- Additional Information -->
                     <div class="form-group">
                         <label for="additional_vehicles">Additional Vehicles (Optional)</label>
-                        <textarea id="additional_vehicles" name="additional_vehicles" placeholder="List any additional vehicles you'd like to insure (make, model, year)..."></textarea>
+                        <textarea id="additional_vehicles" name="additional_vehicles"
+                            placeholder="List any additional vehicles you'd like to insure (make, model, year)..."></textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="additional_info">Additional Notes (Optional)</label>
-                        <textarea id="additional_info" name="additional_info" placeholder="Any special requirements, previous insurance details, or other information..."></textarea>
+                        <textarea id="additional_info" name="additional_info"
+                            placeholder="Any special requirements, previous insurance details, or other information..."></textarea>
                     </div>
 
                     <!-- Submit Button -->
@@ -900,7 +833,8 @@
                     <!-- Success Message -->
                     <div id="success-message">
                         <h3><i class="fas fa-check-circle"></i> Thank You for Your Request!</h3>
-                        <p>We've received your car insurance information and will contact you shortly with customized quotes.</p>
+                        <p>We've received your car insurance information and will contact you shortly with customized
+                            quotes.</p>
                     </div>
                 </form>
             </div>
@@ -917,7 +851,8 @@
                     </div>
                     <div class="benefit-content">
                         <h4>Save Up To $500/Year</h4>
-                        <p>Our comparison service finds you the best rates from multiple top-rated insurance companies.</p>
+                        <p>Our comparison service finds you the best rates from multiple top-rated insurance companies.
+                        </p>
                     </div>
                 </div>
 
@@ -927,7 +862,8 @@
                     </div>
                     <div class="benefit-content">
                         <h4>Comprehensive Protection</h4>
-                        <p>Liability, collision, comprehensive, uninsured motorist, and roadside assistance coverage options.</p>
+                        <p>Liability, collision, comprehensive, uninsured motorist, and roadside assistance coverage
+                            options.</p>
                     </div>
                 </div>
 
@@ -947,7 +883,8 @@
                     </div>
                     <div class="benefit-content">
                         <h4>Expert Guidance</h4>
-                        <p>Our licensed agents help you understand coverage options and choose the best policy for your needs.</p>
+                        <p>Our licensed agents help you understand coverage options and choose the best policy for your
+                            needs.</p>
                     </div>
                 </div>
             </div>
@@ -983,19 +920,23 @@
                 <div class="coverage-grid">
                     <div class="coverage-item">
                         <h4>Liability Coverage</h4>
-                        <p>Covers injuries and property damage you cause to others in an accident. Required by Texas law.</p>
+                        <p>Covers injuries and property damage you cause to others in an accident. Required by Texas
+                            law.</p>
                     </div>
                     <div class="coverage-item">
                         <h4>Collision Coverage</h4>
-                        <p>Pays for damage to your vehicle from collisions with other vehicles or objects, regardless of fault.</p>
+                        <p>Pays for damage to your vehicle from collisions with other vehicles or objects, regardless of
+                            fault.</p>
                     </div>
                     <div class="coverage-item">
                         <h4>Comprehensive Coverage</h4>
-                        <p>Protects against non-collision incidents like theft, vandalism, fire, hail, or animal collisions.</p>
+                        <p>Protects against non-collision incidents like theft, vandalism, fire, hail, or animal
+                            collisions.</p>
                     </div>
                     <div class="coverage-item">
                         <h4>Uninsured Motorist</h4>
-                        <p>Covers your injuries and damages if you're hit by a driver with no insurance or insufficient coverage.</p>
+                        <p>Covers your injuries and damages if you're hit by a driver with no insurance or insufficient
+                            coverage.</p>
                     </div>
                     <div class="coverage-item">
                         <h4>Personal Injury Protection</h4>
@@ -1016,7 +957,8 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h4>Eastar Insurance Agency</h4>
-                    <p>Your trusted partner for affordable car insurance in Texas. We compare rates from multiple top carriers to find you the best deal.</p>
+                    <p>Your trusted partner for affordable car insurance in Texas. We compare rates from multiple top
+                        carriers to find you the best deal.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/profile.php?id=61554671547417" target="_blank"
                             aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -1047,7 +989,8 @@
             </div>
 
             <div class="copyright">
-                <p>&copy; 2017 Eastar Insurance Agency. All rights reserved. | <a href="/" style="color: #bdc3c7;">Back to Home</a></p>
+                <p>&copy; 2017 Eastar Insurance Agency. All rights reserved. | <a href="/" style="color: #bdc3c7;">Back
+                        to Home</a></p>
                 <p style="font-size: 12px; margin-top: 5px;">Licensed insurance agency serving all of Texas</p>
             </div>
         </div>
@@ -1064,11 +1007,11 @@
         // Form submission handling
         document.getElementById('car-quote-form').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Basic form validation
             const requiredFields = this.querySelectorAll('[required]');
             let valid = true;
-            
+
             requiredFields.forEach(field => {
                 if (!field.value.trim()) {
                     valid = false;
@@ -1077,58 +1020,59 @@
                     field.style.borderColor = '#e0e0e0';
                 }
             });
-            
+
             if (!valid) {
                 alert('Please fill in all required fields.');
                 return;
             }
-            
+
             // Show success message
             const successMessage = document.getElementById('success-message');
             successMessage.style.display = 'block';
             successMessage.scrollIntoView({ behavior: 'smooth' });
-            
+
             // Submit the form after a delay
             setTimeout(() => {
                 this.submit();
             }, 2000);
         });
-        
+
         // VIN validation
+        // VIN validation (17 characters required)
         document.getElementById('vin').addEventListener('blur', function () {
             const vin = this.value.trim();
-            if (vin.length > 0 && vin.length !== 17) {
+            if (vin.length !== 17) {
                 this.style.borderColor = 'var(--accent)';
-                this.setCustomValidity('VIN must be 17 characters if provided');
+                this.setCustomValidity('VIN must be exactly 17 characters');
             } else {
                 this.style.borderColor = '#e0e0e0';
                 this.setCustomValidity('');
             }
         });
-        
+
         // WhatsApp button animation control
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const whatsappBtn = document.querySelector('.whatsapp-float');
-            
+
             if (whatsappBtn) {
-                whatsappBtn.addEventListener('mouseenter', function() {
+                whatsappBtn.addEventListener('mouseenter', function () {
                     this.classList.remove('pulse');
                 });
-                
-                whatsappBtn.addEventListener('mouseleave', function() {
+
+                whatsappBtn.addEventListener('mouseleave', function () {
                     setTimeout(() => {
                         this.classList.add('pulse');
                     }, 1000);
                 });
-                
+
                 // Mobile touch handling
                 let touchTimer;
-                whatsappBtn.addEventListener('touchstart', function() {
+                whatsappBtn.addEventListener('touchstart', function () {
                     this.classList.remove('pulse');
                     clearTimeout(touchTimer);
                 });
-                
-                whatsappBtn.addEventListener('touchend', function() {
+
+                whatsappBtn.addEventListener('touchend', function () {
                     touchTimer = setTimeout(() => {
                         this.classList.add('pulse');
                     }, 2000);
