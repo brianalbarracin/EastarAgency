@@ -755,49 +755,44 @@
                         </div>
                     </div>
 
-                    
+
                     <!-- Driver Information -->
-                    <div class="driver-section">
-                        <h3>Driver Information</h3>
-
-                        <div class="form-group">
-                            <label for="license_number">Driver's License Number <span class="required">*</span></label>
-                            <div class="input-with-icon">
-                                <i class="fas fa-id-card"></i>
-                                <input type="text" id="license_number" name="license_number"
-                                    placeholder="Enter your driver's license number" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="license_state">Driver's License State/Country</label>
-                            <div class="input-with-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <input type="text" id="license_state" name="license_state"
-                                    placeholder="Enter state (e.g., TX) or country if foreign">
-                            </div>
-                            <small style="color: var(--gray); display: block; margin-top: 5px;">If your license is from
-                                another U.S. state, enter the state abbreviation. If foreign, enter your
-                                country.</small>
-                        </div>
-                    </div>
+                    
 
                     <!-- Vehicle Information -->
                     <div class="vehicle-section">
                         <h3>Vehicle Information</h3>
 
-                        <div class="form-group">
-                            <label for="vin">Vehicle VIN Number <span class="required">*</span></label>
-                            <div class="input-with-icon">
-                                <i class="fas fa-barcode"></i>
-                                <input type="text" id="vin" name="vin" placeholder="Ex: 1HGCM82633A123456" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="vehicle_year">Vehicle Year <span class="required">*</span></label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-calendar"></i>
+                                    <input type="number" id="vehicle_year" name="vehicle_year" placeholder="2023"
+                                        min="1990" max="2024" required>
+                                </div>
                             </div>
-                            <small style="color: var(--gray); display: block; margin-top: 5px;">17-character Vehicle
-                                Identification Number found on vehicle documents or driver's side dashboard</small>
+
+                            <div class="form-group">
+                                <label for="vehicle_make">Vehicle Make <span class="required">*</span></label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-car"></i>
+                                    <input type="text" id="vehicle_make" name="vehicle_make"
+                                        placeholder="Toyota, Honda, Ford, etc." required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vehicle_model">Vehicle Model <span class="required">*</span></label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-car-side"></i>
+                                <input type="text" id="vehicle_model" name="vehicle_model"
+                                    placeholder="Camry, Civic, F-150, etc." required>
+                            </div>
                         </div>
                     </div>
 
-                    
                     <!-- Coverage Needs -->
                     <div class="form-group">
                         <label for="coverage_type">Desired Coverage Type</label>
@@ -1035,19 +1030,6 @@
             setTimeout(() => {
                 this.submit();
             }, 2000);
-        });
-
-        // VIN validation
-        // VIN validation (17 characters required)
-        document.getElementById('vin').addEventListener('blur', function () {
-            const vin = this.value.trim();
-            if (vin.length !== 17) {
-                this.style.borderColor = 'var(--accent)';
-                this.setCustomValidity('VIN must be exactly 17 characters');
-            } else {
-                this.style.borderColor = '#e0e0e0';
-                this.setCustomValidity('');
-            }
         });
 
         // WhatsApp button animation control
