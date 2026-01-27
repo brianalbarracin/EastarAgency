@@ -11,6 +11,30 @@
         gtag('config', 'AW-17878814718');
     </script>
 
+
+
+
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '823317024062291');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=823317024062291&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="google8100f978de95abf1" />
@@ -48,7 +72,7 @@
     </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         * {
             margin: 0;
@@ -219,7 +243,9 @@
             color: var(--gray);
         }
 
-        input, select, textarea {
+        input,
+        select,
+        textarea {
             width: 100%;
             padding: 12px 12px 12px 45px;
             border: 2px solid #e0e0e0;
@@ -228,7 +254,9 @@
             transition: border-color 0.3s;
         }
 
-        input:focus, select:focus, textarea:focus {
+        input:focus,
+        select:focus,
+        textarea:focus {
             border-color: var(--home-green);
             outline: none;
         }
@@ -676,7 +704,8 @@
     <section class="hero">
         <div class="container">
             <h1>Protect Your Home with Affordable Insurance</h1>
-            <p>Get comprehensive homeowners insurance coverage for your Texas home. Compare rates from top carriers and save on your premium while protecting your most valuable asset.</p>
+            <p>Get comprehensive homeowners insurance coverage for your Texas home. Compare rates from top carriers and
+                save on your premium while protecting your most valuable asset.</p>
             <div class="hero-subtitle">
                 Working with Travelers, Progressive, Lemonade & Nalico to find you the best home insurance rate
             </div>
@@ -705,7 +734,8 @@
                         <label for="full_name">Name <span class="required">*</span></label>
                         <div class="input-with-icon">
                             <i class="fas fa-user"></i>
-                            <input type="text" id="full_name" name="full_name" placeholder="Your first and last name" required>
+                            <input type="text" id="full_name" name="full_name" placeholder="Your first and last name"
+                                required>
                         </div>
                     </div>
 
@@ -730,24 +760,26 @@
                     <!-- Home Information Section -->
                     <div class="home-section">
                         <h3>Home Information</h3>
-                        
+
                         <div class="form-group">
                             <label for="property_address">Property Address <span class="required">*</span></label>
                             <div class="input-with-icon">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <input type="text" id="property_address" name="property_address" placeholder="Address and ZIP code" required>
+                                <input type="text" id="property_address" name="property_address"
+                                    placeholder="Address and ZIP code" required>
                             </div>
                         </div>
-                        
+
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="year_built">Year Built</label>
                                 <div class="input-with-icon">
                                     <i class="fas fa-calendar"></i>
-                                    <input type="number" id="year_built" name="year_built" placeholder="1990" min="1800" max="2024">
+                                    <input type="number" id="year_built" name="year_built" placeholder="1990" min="1800"
+                                        max="2024">
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="home_type">Type of Home</label>
                                 <div class="input-with-icon">
@@ -765,7 +797,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="square_footage">Square Footage</label>
@@ -774,7 +806,7 @@
                                     <input type="number" id="square_footage" name="square_footage" placeholder="2000">
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="home_value">Estimated Home Value</label>
                                 <div class="input-with-icon">
@@ -791,7 +823,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="number_of_bedrooms">Bedrooms</label>
@@ -807,7 +839,7 @@
                                     </select>
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="number_of_bathrooms">Bathrooms</label>
                                 <div class="input-with-icon">
@@ -842,12 +874,14 @@
 
                     <div class="form-group">
                         <label for="special_features">Special Features (Optional)</label>
-                        <textarea id="special_features" name="special_features" placeholder="Swimming pool, fireplace, security system, recent renovations, etc..."></textarea>
+                        <textarea id="special_features" name="special_features"
+                            placeholder="Swimming pool, fireplace, security system, recent renovations, etc..."></textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="additional_info">Additional Information (Optional)</label>
-                        <textarea id="additional_info" name="additional_info" placeholder="Previous insurance details, claims history, or any other relevant information..."></textarea>
+                        <textarea id="additional_info" name="additional_info"
+                            placeholder="Previous insurance details, claims history, or any other relevant information..."></textarea>
                     </div>
 
                     <!-- Submit Button -->
@@ -858,7 +892,8 @@
                     <!-- Success Message -->
                     <div id="success-message">
                         <h3><i class="fas fa-check-circle"></i> Thank You for Your Request!</h3>
-                        <p>We've received your home insurance information and will contact you shortly with customized quotes.</p>
+                        <p>We've received your home insurance information and will contact you shortly with customized
+                            quotes.</p>
                     </div>
                 </form>
             </div>
@@ -875,7 +910,8 @@
                     </div>
                     <div class="benefit-content">
                         <h4>Comprehensive Protection</h4>
-                        <p>Coverage for dwelling, personal property, liability, and additional living expenses in case of disasters.</p>
+                        <p>Coverage for dwelling, personal property, liability, and additional living expenses in case
+                            of disasters.</p>
                     </div>
                 </div>
 
@@ -885,7 +921,8 @@
                     </div>
                     <div class="benefit-content">
                         <h4>Competitive Rates</h4>
-                        <p>We compare rates from multiple top carriers to ensure you get the best value for your home insurance.</p>
+                        <p>We compare rates from multiple top carriers to ensure you get the best value for your home
+                            insurance.</p>
                     </div>
                 </div>
 
@@ -905,7 +942,8 @@
                     </div>
                     <div class="benefit-content">
                         <h4>Personalized Service</h4>
-                        <p>Our licensed agents help you understand coverage options and customize your policy to fit your needs.</p>
+                        <p>Our licensed agents help you understand coverage options and customize your policy to fit
+                            your needs.</p>
                     </div>
                 </div>
             </div>
@@ -937,19 +975,23 @@
                 <div class="coverage-grid">
                     <div class="coverage-item">
                         <h4>Dwelling Coverage</h4>
-                        <p>Protects the structure of your home against damage from fire, wind, hail, and other covered perils.</p>
+                        <p>Protects the structure of your home against damage from fire, wind, hail, and other covered
+                            perils.</p>
                     </div>
                     <div class="coverage-item">
                         <h4>Personal Property</h4>
-                        <p>Covers your belongings inside the home including furniture, electronics, clothing, and appliances.</p>
+                        <p>Covers your belongings inside the home including furniture, electronics, clothing, and
+                            appliances.</p>
                     </div>
                     <div class="coverage-item">
                         <h4>Liability Protection</h4>
-                        <p>Protects you if someone is injured on your property or if you accidentally damage someone else's property.</p>
+                        <p>Protects you if someone is injured on your property or if you accidentally damage someone
+                            else's property.</p>
                     </div>
                     <div class="coverage-item">
                         <h4>Additional Living Expenses</h4>
-                        <p>Pays for temporary housing and living costs if your home becomes uninhabitable due to covered damage.</p>
+                        <p>Pays for temporary housing and living costs if your home becomes uninhabitable due to covered
+                            damage.</p>
                     </div>
                     <div class="coverage-item">
                         <h4>Medical Payments</h4>
@@ -957,7 +999,8 @@
                     </div>
                     <div class="coverage-item">
                         <h4>Other Structures</h4>
-                        <p>Protects detached structures like garages, sheds, fences, and guest houses on your property.</p>
+                        <p>Protects detached structures like garages, sheds, fences, and guest houses on your property.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -970,7 +1013,8 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h4>Eastar Insurance Agency</h4>
-                    <p>Your trusted partner for affordable home insurance in Texas. We compare rates from multiple top carriers to find you the best coverage.</p>
+                    <p>Your trusted partner for affordable home insurance in Texas. We compare rates from multiple top
+                        carriers to find you the best coverage.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/profile.php?id=61554671547417" target="_blank"
                             aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -1001,7 +1045,8 @@
             </div>
 
             <div class="copyright">
-                <p>&copy; 2017 Eastar Insurance Agency. All rights reserved. | <a href="/" style="color: #bdc3c7;">Back to Home</a></p>
+                <p>&copy; 2017 Eastar Insurance Agency. All rights reserved. | <a href="/" style="color: #bdc3c7;">Back
+                        to Home</a></p>
                 <p style="font-size: 12px; margin-top: 5px;">Licensed insurance agency serving all of Texas</p>
             </div>
         </div>
@@ -1018,11 +1063,11 @@
         // Form submission handling
         document.getElementById('home-quote-form').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Basic form validation
             const requiredFields = this.querySelectorAll('[required]');
             let valid = true;
-            
+
             requiredFields.forEach(field => {
                 if (!field.value.trim()) {
                     valid = false;
@@ -1031,46 +1076,46 @@
                     field.style.borderColor = '#e0e0e0';
                 }
             });
-            
+
             if (!valid) {
                 alert('Please fill in all required fields.');
                 return;
             }
-            
+
             // Show success message
             const successMessage = document.getElementById('success-message');
             successMessage.style.display = 'block';
             successMessage.scrollIntoView({ behavior: 'smooth' });
-            
+
             // Submit the form after a delay
             setTimeout(() => {
                 this.submit();
             }, 2000);
         });
-        
+
         // WhatsApp button animation control
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const whatsappBtn = document.querySelector('.whatsapp-float');
-            
+
             if (whatsappBtn) {
-                whatsappBtn.addEventListener('mouseenter', function() {
+                whatsappBtn.addEventListener('mouseenter', function () {
                     this.classList.remove('pulse');
                 });
-                
-                whatsappBtn.addEventListener('mouseleave', function() {
+
+                whatsappBtn.addEventListener('mouseleave', function () {
                     setTimeout(() => {
                         this.classList.add('pulse');
                     }, 1000);
                 });
-                
+
                 // Mobile touch handling
                 let touchTimer;
-                whatsappBtn.addEventListener('touchstart', function() {
+                whatsappBtn.addEventListener('touchstart', function () {
                     this.classList.remove('pulse');
                     clearTimeout(touchTimer);
                 });
-                
-                whatsappBtn.addEventListener('touchend', function() {
+
+                whatsappBtn.addEventListener('touchend', function () {
                     touchTimer = setTimeout(() => {
                         this.classList.add('pulse');
                     }, 2000);
